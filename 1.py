@@ -1,0 +1,17 @@
+def data_aug(data):
+    data_rot90 = tf.image.rot90(data)
+    data_rot180 = tf.image.rot90(data_rot90)
+    data_rot270 = tf.image.rot90(data_rot180)
+    data_u2d = tf.image.flip_up_down(data)
+    data_l2r = tf.image.flip_left_right(data)
+    data_trans = tf.image.transpose_image(data)
+    session = tf.Session()
+    data_rot90 = session.run(data_rot90)
+    data_rot180 = session.run(data_rot180)
+    data_rot270 = session.run(data_rot270)
+    data_u2d = session.run(data_u2d)
+    data_l2r = session.run(data_l2r)
+    data_trans = session.run(data_trans)
+    #data_flip_rot_save = np.concatenate([data, data_rot90, data_rot180, data_rot270, data_u2d, data_l2r, data_trans], axis=0)
+    data_flip_rot_save = np.concatenate([data, data_rot90, data_rot180, data_rot270, data_u2d, data_l2r, data_trans],axis=0)
+    return data_flip_rot_save
