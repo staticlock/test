@@ -14,4 +14,5 @@ def data_aug(data):
     data_trans = session.run(data_trans)
     #data_flip_rot_save = np.concatenate([data, data_rot90, data_rot180, data_rot270, data_u2d, data_l2r, data_trans], axis=0)
     data_flip_rot_save = np.concatenate([data, data_rot90, data_rot180, data_rot270, data_u2d, data_l2r, data_trans],axis=0)
+    print("hello git!")
     return data_flip_rot_save
